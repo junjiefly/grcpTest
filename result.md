@@ -1,4 +1,5 @@
 test machine ：
+
 [root~]# free -g
               total        used        free      shared  buff/cache   available
 Mem:            251          19         123          42         108         188
