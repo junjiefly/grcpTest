@@ -1,0 +1,30 @@
+syntax = "proto3";
+
+package stream;
+option go_package ="./server";
+
+
+service StreamServer {
+  rpc RunDemo (Request) returns (Reply) {}
+  rpc Download (DownRequest) returns (stream DownReply) {}
+  rpc DownloadNormal (DownRequest) returns (DownReply) {}
+}
+
+
+message Request {
+  string name = 1;
+}
+
+message Reply {
+  string message = 1;
+}
+
+message DownRequest {
+  uint32 size = 1;
+}
+
+message DownReply {
+  string errMsg = 1;
+  uint32 retCode = 2;
+  bytes  data = 3;
+}
