@@ -156,7 +156,7 @@ thread: 20 block count: 1000 use stream: true  use http: false cost: 50.34014655
 local net io：
 02:06:52 PM        lo  71092.00  71092.00 3250167.07 3250167.07      0.00      0.00      0.00
 
-cpu: id为 8%
+cpu: idle 8%
 %Cpu(s): 65.7 us, 23.8 sy,  0.0 ni,  8.7 id,  0.0 wa,  0.0 hi,  1.8 si,  0.0 st
 29024 root      20   0 4034272 909660   5160 R  1463  0.3   7:01.44 grpcTest    server
 29540 root      20   0 3444224 809904   5488 S  1065  0.3   4:58.04 grpcTest    client
