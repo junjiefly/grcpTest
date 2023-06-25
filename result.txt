@@ -44,10 +44,10 @@ node 73 and node 74  both starts a client at the same time to visit node 76.
 
 
 server start order：
-./grpcTest -name=server -serverAddr=10.243.80.76  -useHttp=false
+./grpcTest -name=server -serverAddr=10.24.8.76  -useHttp=false
 
 client start order：
-./grpcTest -serverAddr=10.243.80.76 -name=client  -thread=2   -blockCnt=2000 -useHttp=false
+./grpcTest -serverAddr=10.24.8.76 -name=client  -thread=2   -blockCnt=2000 -useHttp=false
 
 
 
@@ -93,11 +93,11 @@ which is:
 
 A、 HTTP1.1
 server start order：
-./grpcTest -name=server -serverAddr=10.243.80.76  -useHttp=true
+./grpcTest -name=server -serverAddr=10.24.8.76  -useHttp=true
 
 client start order： [client use ioutil.ReadAll to read data from the server]
-./grpcTest -serverAddr=10.243.80.76 -name=client  -thread=20   -blockCnt=1000 -useHttp=true
-./grpcTest -serverAddr=10.243.80.76 -name=client  -thread=20   -blockCnt=1000 -useHttp=true
+./grpcTest -serverAddr=10.24.8.76 -name=client  -thread=20   -blockCnt=1000 -useHttp=true
+./grpcTest -serverAddr=10.24.8.76 -name=client  -thread=20   -blockCnt=1000 -useHttp=true
 
 
 timeCost：
@@ -121,11 +121,11 @@ cpu, so, we then use fastpool instead of ioutil.ReadAll
 
 B、 HTTP1.1 with fastPool
 server start order：
-./grpcTest -name=server -serverAddr=10.243.80.76  -useHttp=true
+./grpcTest -name=server -serverAddr=10.24.8.76  -useHttp=true
 
 client start order： [client use fastPool to read data from the server]
-./grpcTest -serverAddr=10.243.80.76 -name=client  -thread=20   -blockCnt=1000 -useHttp=true
-./grpcTest -serverAddr=10.243.80.76 -name=client  -thread=20   -blockCnt=1000 -useHttp=true
+./grpcTest -serverAddr=10.24.8.76 -name=client  -thread=20   -blockCnt=1000 -useHttp=true
+./grpcTest -serverAddr=10.24.8.76 -name=client  -thread=20   -blockCnt=1000 -useHttp=true
 
 timeCost：
 thread: 20 block count: 1000 use stream: true  use http: true cost: 10.065988154s
@@ -143,11 +143,11 @@ cpu：    idle ：6%
 C、GRPC with  stream 
 
 server start order：
- ./grpcTest -name=server -serverAddr=10.243.80.76  -useHttp=false
+ ./grpcTest -name=server -serverAddr=10.24.8.76  -useHttp=false
 
 client start order：
-./grpcTest -serverAddr=10.243.80.76 -name=client  -thread=20   -blockCnt=1000 -useHttp=false
-./grpcTest -serverAddr=10.243.80.76 -name=client  -thread=20   -blockCnt=1000 -useHttp=false
+./grpcTest -serverAddr=10.24.8.76 -name=client  -thread=20   -blockCnt=1000 -useHttp=false
+./grpcTest -serverAddr=10.24.8.76 -name=client  -thread=20   -blockCnt=1000 -useHttp=false
 
 timeCost：
 thread: 20 block count: 1000 use stream: true  use http: false cost: 51.078403616s
